@@ -5,6 +5,11 @@ import Helmet from 'react-helmet'
 
 import './index.css'
 
+const routeStyle = {
+  color: 'black',
+  textDecoration: 'none',
+};
+
 const Header = () => (
   <div
     style={{
@@ -27,9 +32,15 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Hacker News Clone
+        Hacker News Clone
         </Link>
-      </h1>
+        </h1>
+        <Link to="/newest" style={routeStyle}>new</Link>{` | `} 
+        <Link to="/newcomments" style={routeStyle}>comments</Link>{` | `} 
+        <Link to="/show" style={routeStyle}>show</Link>{` | `} 
+        <Link to="/ask" style={routeStyle}>ask</Link>{` | `} 
+        <Link to="/jobs" style={routeStyle}>jobs</Link>{` | `} 
+        <Link to="/submit" style={routeStyle}>submit</Link>
     </div>
   </div>
 )
