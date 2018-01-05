@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `YA React HN`,
   },
+  pathPrefix: `/ya-react-hacker-news`,
   plugins: [`gatsby-plugin-react-helmet`],
 }
