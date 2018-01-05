@@ -8,7 +8,16 @@ import './index.css'
 const routeStyle = {
   color: 'black',
   textDecoration: 'none',
-};
+}
+
+const activeStyle = {
+  color: 'white',
+}
+
+const linkProps = {
+  style: routeStyle,
+  activeStyle,
+}
 
 const Header = () => (
   <div
@@ -35,12 +44,13 @@ const Header = () => (
         Hacker News Clone
         </Link>
         </h1>
-        <Link to="/newest" style={routeStyle}>new</Link>{` | `} 
-        <Link to="/newcomments" style={routeStyle}>comments</Link>{` | `} 
-        <Link to="/show" style={routeStyle}>show</Link>{` | `} 
-        <Link to="/ask" style={routeStyle}>ask</Link>{` | `} 
-        <Link to="/jobs" style={routeStyle}>jobs</Link>{` | `} 
-        <Link to="/submit" style={routeStyle}>submit</Link>
+        { /* TODO: Make a wrapping component that takes links and returns an array of fragment with bar spacing for (n -1) */}
+        <Link to="/newest" {...linkProps}>new</Link>{` | `} 
+        <Link to="/newcomments" {...linkProps}>comments</Link>{` | `} 
+        <Link to="/show" {...linkProps}>show</Link>{` | `} 
+        <Link to="/ask" {...linkProps}>ask</Link>{` | `} 
+        <Link to="/jobs" {...linkProps}>jobs</Link>{` | `} 
+        <Link to="/submit" {...linkProps}>submit</Link>
     </div>
   </div>
 )
