@@ -8,7 +8,7 @@ import './index.css'
 const Header = () => (
   <div
     style={{
-      background: 'rebeccapurple',
+      background: '#ff6600',
       marginBottom: '1.45rem',
     }}
   >
@@ -27,7 +27,7 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby
+          Hacker News Clone
         </Link>
       </h1>
     </div>
