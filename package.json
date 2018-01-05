@@ -1,0 +1,24 @@
+{
+  "name": "@murrayl/ya-react-hacker-news",
+  "version": "1.0.0",
+  "description": "yet another react hacker news clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muntact/ya-react-hacker-news.git"
+  },
+  "keywords": [
+    "react",
+    "hacker",
+    "news"
+  ],
+  "author": "murrayl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muntact/ya-react-hacker-news/issues"
+  },
+  "homepage": "https://github.com/muntact/ya-react-hacker-news#readme"
+}
