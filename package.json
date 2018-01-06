@@ -20,10 +20,12 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
     "react-scripts": "1.0.17"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0"
+    "gh-pages": "^1.1.0",
+    "react-router-dom": "^4.2.2"
   },
   "keywords": [
     "react",
