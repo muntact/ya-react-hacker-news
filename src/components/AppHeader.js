@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const routeStyle = {
     color: 'black',
@@ -18,12 +18,12 @@ const linkProps = {
 const AppHeader = (props) => (
     <header className="App-header">
         <h1 className="App-title">Welcome to React</h1>
-        <Link to="/newest" {...linkProps}>new</Link>{` | `}
-        <Link to="/newcomments" {...linkProps}>comments</Link>{` | `}
-        <Link to="/show" {...linkProps}>show</Link>{` | `}
-        <Link to="/ask" {...linkProps}>ask</Link>{` | `}
-        <Link to="/jobs" {...linkProps}>jobs</Link>{` | `}
-        <Link to="/submit" {...linkProps}>submit</Link>
+        <NavLink to="/newest" {...linkProps}>new</NavLink>{` | `}
+        <NavLink to="/newcomments" {...linkProps}>comments</NavLink>{` | `}
+        <NavLink to="/show" {...linkProps}>show</NavLink>{` | `}
+        <NavLink to="/ask" {...linkProps}>ask</NavLink>{` | `}
+        <NavLink to="/jobs" {...linkProps}>jobs</NavLink>{` | `}
+        <NavLink to="/submit" {...linkProps}>submit</NavLink>
     </header>
 );
 
