@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import AppHeader from './components/AppHeader';
 import './App.css';
+import './Gatsby.css';
 
 class App extends Component {
   render() {

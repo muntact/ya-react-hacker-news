@@ -18,14 +18,12 @@ const linkProps = {
 const AppHeader = (props) => (
     <header className="App-header">
         <h1 className="App-title">Welcome to React</h1>
-        <ul>
-            <li><Link to="/newest" {...linkProps}>new</Link>{` | `}</li>
-            <li><Link to="/newcomments" {...linkProps}>comments</Link>{` | `}</li>
-            <li><Link to="/show" {...linkProps}>show</Link>{` | `}</li>
-            <li><Link to="/ask" {...linkProps}>ask</Link>{` | `}</li>
-            <li><Link to="/jobs" {...linkProps}>jobs</Link>{` | `}</li>
-            <li><Link to="/submit" {...linkProps}>submit</Link></li>
-        </ul>
+        <Link to="/newest" {...linkProps}>new</Link>{` | `}
+        <Link to="/newcomments" {...linkProps}>comments</Link>{` | `}
+        <Link to="/show" {...linkProps}>show</Link>{` | `}
+        <Link to="/ask" {...linkProps}>ask</Link>{` | `}
+        <Link to="/jobs" {...linkProps}>jobs</Link>{` | `}
+        <Link to="/submit" {...linkProps}>submit</Link>
     </header>
 );
 
