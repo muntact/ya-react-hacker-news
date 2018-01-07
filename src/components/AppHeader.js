@@ -17,7 +17,8 @@ const linkProps = {
 
 const AppHeader = (props) => (
     <header className="App-header">
-        <h1 className="App-title">YA React HN Clone</h1>
+
+        <NavLink exact to="/" style={routeStyle}><h1 className="App-title">YA React HN Clone</h1></NavLink>
         <NavLink to="/newest" {...linkProps}>new</NavLink>{` | `}
         <NavLink to="/newcomments" {...linkProps}>comments</NavLink>{` | `}
         <NavLink to="/show" {...linkProps}>show</NavLink>{` | `}

@@ -62,7 +62,7 @@ class NewestPage extends Component {
         return (
             <div>
                 {stories.map(({ by, descendants, id, score, time, title, type, url }, index) => (
-                    <div id={id} style={{ display: 'flex', textAlign: 'left' }}>
+                    <div key={id} id={id} style={{ display: 'flex', textAlign: 'left' }}>
                         <div>{index + 1}.^</div>
                         <div>
                             { /* TODO: put the domain after the anchor */}
