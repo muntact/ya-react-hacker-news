@@ -11,15 +11,15 @@ const ItemsList = ({ stories, internalUrls }) => (
                     { /* TODO: anchor styling and text align. */}
                     <a href={internalUrls ? url : `https://news.ycombinator.com/item?id=${id}`}>{title}</a>
                     <br />
-                    {/* TODO: turn the by into a link. */}
+                    {score} {`${score > 1 ? 'points' : 'point'}`} 
+                    <span> by </span>
+                    <a href={`https://news.ycombinator.com/user?id=${by}`}>{by}</a>
                     {/* TODO: add a time ago value. */}
+                    <span> time ago </span>
                     {/* TODO: trailing links: past, web, discuss */}
-                    {score} {`${score > 1 ? 'points' : 'point'}`} by {by} time ago
-                                {/* <span>descendants: </span><span>{descendants}</span>
-                                    <span>id: </span><span>{id}</span>
-                                    <span>time: </span><span>{time}</span>
-                                    <span>type: </span><span>{type}</span>
-                                */}
+                    <span> | 
+                    <a href={`https://news.ycombinator.com/item?id=${id}`}>{descendants > 0 ? `${descendants} comments` : 'discuss'}</a> 
+                    </span>
                 </div>
             </div>
         ))}
