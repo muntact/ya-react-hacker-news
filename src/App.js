@@ -18,11 +18,11 @@ class App extends Component {
           <AppHeader />
           <Route exact path="/" component={IndexPage} />
           <Route path="/newest" component={NewestPage} />
-          <Route path="/newcomments" render={() => (<div>newcomments</div>)} />
+          <Route path="/newcomments" render={() => (<div>newcomments. TODO :D</div>)} />
           <Route path="/show" component={ShowPage} />
           <Route path="/ask" component={AskPage} />
           <Route path="/jobs" component={JobsPage} />
-          <Route path="/submit" render={() => (<div>submit</div>)} />
+          <Route path="/submit" render={() => (<div>submit. TODO :D</div>)} />
         </div>
       </Router>
     );

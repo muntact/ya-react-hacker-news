@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import ItemsList from '../components/ItemsList';
+
 class JobsPage extends Component {
     constructor(props) {
         super(props);
@@ -49,40 +51,7 @@ class JobsPage extends Component {
             );
         }
         // implicit else, has data :)
-
-        // by: "antouank"
-        // descendants: 0
-        // id: 16084349
-        // score: 1
-        // time: 1515226016
-        // title: "Intel faces class action lawsuits regarding Meltdown and Spectre"
-        // type: "story"
-        // url: "https://arstechnica.com/gadgets/2018/01/intel-faces-class-action-lawsuits-regarding-meltdown-and-spectre/"
-
-        return (
-            <div>
-                {stories.map(({ by, descendants, id, score, time, title, type, url }, index) => (
-                    <div key={id} id={id} style={{ display: 'flex', textAlign: 'left' }}>
-                        <div>{index + 1}.^</div>
-                        <div>
-                            { /* TODO: put the domain after the anchor */}
-                            { /* TODO: anchor styling and text align. */}
-                            <a href={url}>{title}</a>
-                            <br />
-                            {/* TODO: turn the by into a link. */}
-                            {/* TODO: add a time ago value. */}
-                            {/* TODO: trailing links: past, web, discuss */}
-                            {score} {`${score > 1 ? 'points' : 'point'}`} by {by} time ago
-                            {/* <span>descendants: </span><span>{descendants}</span>
-                                <span>id: </span><span>{id}</span>
-                                <span>time: </span><span>{time}</span>
-                                <span>type: </span><span>{type}</span>
-                            */}
-                        </div>
-                    </div>
-                ))}
-            </div>
-        );
+        return (<ItemsList stories={stories} />);
     }
 }
 
