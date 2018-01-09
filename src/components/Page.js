@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { ScaleLoader } from 'react-spinners'
 
-import ItemsList from '../components/ItemsList';
+import ItemsList from '../components/ItemsList'
 
-class JobsPage extends Component {
+class Page extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,9 +14,7 @@ class JobsPage extends Component {
     }
 
     componentDidMount() {
-        // TODO: move this to services:....
-        // call the api https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty
-        fetch('https://hacker-news.firebaseio.com/v0/jobstories.json?print=pretty')
+        fetch(`https://hacker-news.firebaseio.com/v0/${this.props.api}.json?print=pretty`)
             .then((response) => response.json())
             .then((storyIds) => Promise.all(storyIds.slice(0, 25)
                 .map((storyId) =>
@@ -37,22 +36,20 @@ class JobsPage extends Component {
 
         if (isFetching) {
             return (
-                <div>
-                    <h1>This is the Jobs page</h1>
-                    <p>It's fetching</p>
+                <div style={{ marginTop: '10px' }}>
+                    <ScaleLoader color={'#000'} loading />
                 </div>
             );
         } else if (errored) {
             return (
                 <div>
-                    <h1>This is the Jobs page</h1>
+                    <h1>This is the Ask page</h1>
                     <p>It errored</p>
                 </div>
             );
         }
-        // implicit else, has data :)
-        return (<ItemsList stories={stories} />);
+        return (<ItemsList stories={stories} internalUrls={false} />);
     }
 }
 
-export default JobsPage
+export default Page
