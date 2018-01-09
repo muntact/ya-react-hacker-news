@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { ScaleLoader } from 'react-spinners';
 
 import ItemsList from '../components/ItemsList';
 
@@ -37,9 +38,8 @@ class AskPage extends Component {
 
         if (isFetching) {
             return (
-                <div>
-                    <h1>This is the Ask page</h1>
-                    <p>It's fetching</p>
+                <div style={{ marginTop: '10px' }}>
+                    <ScaleLoader color={'#000'} loading />
                 </div>
             );
         } else if (errored) {
@@ -50,17 +50,6 @@ class AskPage extends Component {
                 </div>
             );
         }
-        // implicit else, has data :)
-
-        // by: "antouank"
-        // descendants: 0
-        // id: 16084349
-        // score: 1
-        // time: 1515226016
-        // title: "Intel faces class action lawsuits regarding Meltdown and Spectre"
-        // type: "story"
-        // url: "https://arstechnica.com/gadgets/2018/01/intel-faces-class-action-lawsuits-regarding-meltdown-and-spectre/"
-
         return (<ItemsList stories={stories} internalUrls={false} />);
     }
 }
