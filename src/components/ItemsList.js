@@ -18,7 +18,7 @@ const ItemsList = ({ stories, internalUrls }) => (
                     <span> time ago </span>
                     {/* TODO: trailing links: past, web, discuss */}
                     <span> | 
-                    <a href={`https://news.ycombinator.com/item?id=${id}`}>{descendants > 0 ? `${descendants} comments` : 'discuss'}</a> 
+                    <a href={`${window.location.origin}/item/${id}`}>{descendants > 0 ? `${descendants} comments` : 'discuss'}</a> 
                     </span>
                 </div>
             </div>
