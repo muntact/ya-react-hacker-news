@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { ScaleLoader } from 'react-spinners'
 
-import ItemsList from '../components/ItemsList'
+import ListItem from '../components/ListItem'
 
 class CommentPage extends Component {
     constructor(props) {
@@ -34,7 +34,7 @@ class CommentPage extends Component {
     }
 
     render() {
-        const { isFetching, errored, stories } = this.state;
+        const { isFetching, errored, comments, story } = this.state;
 
         if (isFetching) {
             return (
@@ -50,25 +50,23 @@ class CommentPage extends Component {
                 </div>
             );
         }
-        /* 
-        by: "dangrossman"
-        id: 16104246
-        parent: 16103944
-        text: "According to Google cache, the robots.txt file and sitemap, it used to be a WordPress-powered link directory that you could pay to submit a link to and purported to offer &quot;authority&quot; to boost your search engine rankings. At some point recently, they probably threw an &quot;exit&quot; or &quot;die()&quot; into the index file: all the pages are there but returning no content. The millions of links were likely created by the site&#x27;s owner&#x27;s own other sites&#x2F;domains; a spammy link network to game search engines again. There&#x27;s tons of link and content farms like this out there trying to manipulate Google search results."
-        time: 1515482572
-        type: "comment"
-        */
+
         return (
             <div>
-                {this.state.comments.map((comment) => (
-                    <div key={comment.id}>
-                        <span>by: {comment.by}</span>
-                        <span>id: {comment.id}</span>
-                        <span>parent: {comment.parent}</span>
-                        <span>time: {comment.time}</span>
-                        <span>type: {comment.type}</span>
+                {/* omit index prop required. */}
+                <ListItem {...{ ...story, index: 0, internalUrls: false }} />
+                <div><br />This is where the input thing goes :X<br /><br /></div>
+                {comments.map((comment) => (
+                    [(<div key={comment.id} id={comment.id} style={{ display: 'flex', textAlign: 'left' }}>
+                        <div>^</div>
+                        <div>
+                            <a href={`https://news.ycombinator.com/user?id=${comment.by}`}>{comment.by}</a>
+                            <span> time ago </span>
+                        </div>
+                    </div>),
+                    (<div key={comment.id} style={{ textAlign: 'left', marginLeft: '20px' }}>
                         <span dangerouslySetInnerHTML={{ __html: comment.text }} />
-                    </div>
+                    </div>)]
                     )
                 )}
             </div>
